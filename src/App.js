@@ -38,18 +38,19 @@ class App extends Component {
 
   handleChangeInput = x => this.setState({searchInput:x.trim()})
 
-  // handleSearchInputStar = w => {
-  //   if (w < 6 && !w.match(/[^0-9/]/g)){
-  //     this.setState({searchStar: w})
-  //   }
-  // }
+  handleSearchInputStar = w => {
+    if (["1", "2", "3", "4", "5", ""].includes(w)){
+      this.setState({searchStar: w})
+    }
+  }
   
 
   render() {
+    const { movieList, searchInput, searchStar } = this.state;
     return (
       <div className="container">
-        <SearchBar handleChangeInput={this.handleChangeInput} handleSearchInputStar={this.andleSearchInputStar}/>
-        <MovieList movieList={this.state.movieList} searchInput={this.state.searchInput} /* searchStar={Number(this.state.searchStar)}*/ /> 
+        <SearchBar searchStar={searchStar} handleChangeInput={this.handleChangeInput} handleSearchInputStar={this.handleSearchInputStar}/>
+        <MovieList movieList={movieList} searchInput={searchInput} searchStar={searchStar} /> 
         <AddMovie handleAdd={this.handleAdd} />
       </div>
     );

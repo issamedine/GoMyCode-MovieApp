@@ -8,7 +8,7 @@ class SearchBar extends Component {
   }
   
   render() {
-    console.log(this.props);
+    const { searchStar } = this.props;
     return (
       <div className="search-bar">
         <span className="input-search">
@@ -20,7 +20,7 @@ class SearchBar extends Component {
           <button>Search</button>
         </span>
         <span>
-          {/* <input type="number" onChange={e => this.props.handleSearchInputStar(e.target.value)}/> */}
+          <input type="text" value={searchStar} onChange={e => this.props.handleSearchInputStar(e.target.value)}/>
         </span>
       </div>
     );
