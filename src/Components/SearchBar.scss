@@ -1,0 +1,28 @@
+.star-search {
+  color: #aba8a8;
+}
+.search-bar {
+    text-align: center;
+    margin: 2% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .input-search {
+        width: 700px;
+        input {
+            width: 70%;
+            border: 1px solid #bfbfbf;
+            padding: 5px 15px;
+          }
+          button {
+            border: 1px solid #b9b7b7;
+            background-color: transparent;
+            padding: 5px 25px;
+            &:hover {
+                background-color: #969292;
+                color: #ffffff;
+                transition: 0.5s all;
+            }
+          }
+    }
+}
