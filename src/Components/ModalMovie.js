@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Modal, Button, Icon } from "antd";
+import { Modal, Button, Icon, Row, Col } from "antd";
 import "antd/dist/antd.css";
 import "./AddMovie.scss";
 
@@ -54,7 +54,7 @@ class ModalMovie extends Component {
         <div className="row">
           <div className="col-xs-12 col-md-3">
             <div
-              className="card card-modal"
+              className="card card-modal flip-horizontal-bottom"
               type="primary"
               onClick={this.showModal}
             >
@@ -63,32 +63,38 @@ class ModalMovie extends Component {
           </div>
         </div>
         <Modal
-          title="Basic Modal"
+          title="Please enter your film"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
           <p>
             <input
+              className="input-modal"
               type="text"
               name="title"
               onChange={this.handleChange}
               value={this.state.title}
+              placeholder="choose the title of your film"
             />
           </p>
-          <p>
+          <p >
+            <label htmlFor="rating">choose the number of stars :</label><br/>
             <input
+              className="input-modal"
               type="number"
               name="rating"
+              id="rating"
               onChange={this.handleChange, this.handleChangeNumber}
               value={this.state.rating}
             />
           </p>
           <p>
-            <label for="avatar">Choose a movie picture:</label>
+            <label for="avatar">choose the link for your movie :</label>
             <br />
 
             <input
+              className="input-modal"
               id="avatar"
               type="text"
               name="image"

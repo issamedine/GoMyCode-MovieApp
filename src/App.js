@@ -4,13 +4,15 @@ import MovieList from "./Components/MovieList";
 import SearchBar from "./Components/SearchBar";
 import AddMovie from "./Components/AddMovie";
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       movieList: [
-        { key: Math.random(), title: "aaa", rating: 3, image: "" },
-        { key: Math.random(), title: "bbb", rating: 2, image: "" }
+        { key: Math.random(), title: "First movie", rating: 3, image: "" },
+        { key: Math.random(), title: "Second movie", rating: 2, image: "" }
       ],
       searchInput: "",
       searchStar:"",
@@ -43,12 +45,12 @@ class App extends Component {
       this.setState({searchStar: w})
     }
   }
-  
 
   render() {
     const { movieList, searchInput, searchStar } = this.state;
     return (
       <div className="container">
+        <h1 className="title-project heartbeat">Hello to Movie App..</h1>
         <SearchBar searchStar={searchStar} handleChangeInput={this.handleChangeInput} handleSearchInputStar={this.handleSearchInputStar}/>
         <MovieList movieList={movieList} searchInput={searchInput} searchStar={searchStar} /> 
         <AddMovie handleAdd={this.handleAdd} />

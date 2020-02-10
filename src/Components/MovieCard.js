@@ -11,7 +11,7 @@ function MovieCard(props) {
   
   return (
     <div className="col-xs-12 col-md-3">
-      <div className="card">
+      <div className="card shadow-drop-2-center">
         {/* <Rate value={rating} /> */}
         <Star rating={rating}/>
         <img src={image} alt="..." width="400" height="200" />
@@ -22,3 +22,5 @@ function MovieCard(props) {
 }
 
 export default MovieCard;
+
+
