@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Modal, Button, Icon, Row, Col } from "antd";
 import "antd/dist/antd.css";
 import "./AddMovie.scss";
+import Star from './Star'
 
 class ModalMovie extends Component {
   state = {
@@ -9,8 +10,13 @@ class ModalMovie extends Component {
     key:"",
     title: "",
     rating: 0,
-    image: ""
+    image: "",
   };
+
+
+  switshStar=(x)=>{
+    this.setState({rating:x})
+  }
 
   showModal = () => {
     this.setState({
@@ -49,6 +55,7 @@ class ModalMovie extends Component {
   }
 
   render() {
+    const { handelChangeRate, clickedStarValue } = this.props
     return (
       <div>
         <div className="row">
@@ -78,16 +85,17 @@ class ModalMovie extends Component {
               placeholder="choose the title of your film"
             />
           </p>
-          <p >
-            <label htmlFor="rating">choose the number of stars :</label><br/>
-            <input
+          <p className="star-add">
+            <label htmlFor="rating">choose the number of stars :</label>
+            {/* <input
               className="input-modal"
               type="number"
               name="rating"
               id="rating"
               onChange={this.handleChange, this.handleChangeNumber}
               value={this.state.rating}
-            />
+            /> */}
+            <Star rating={this.state.rating} handelChangeRate={this.switshStar}/>
           </p>
           <p>
             <label for="avatar">choose the link for your movie :</label>

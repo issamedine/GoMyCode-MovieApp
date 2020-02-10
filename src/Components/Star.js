@@ -1,16 +1,38 @@
 import React from "react";
-import "./Star.scss"
+import "./Star.scss";
 
-function Star(props) {
-  console.log("props", props.rating);
+const Star = ({rating, handelChangeRate=()=>{}}) => {
+
   const arr = [];
-    for (let i = 0; i < 5; i++) {
-      if (i < props.rating) {
-        arr.push(<span>★</span>);
-      } else {
-        arr.push(<span>☆</span>);
-      }
+
+  for (let i = 0; i < 5; i++) {
+    if (i < rating) {
+      arr.push(
+        <span
+          key={i}
+          onClick={() => handelChangeRate(i + 1)
+          
+        }
+        >
+          ★
+        </span>
+      );
+    } else {
+      arr.push(
+        <span
+          key={i}
+          onClick={() => handelChangeRate(i + 1)
+          }
+        >
+          ☆
+        </span>
+      );
     }
-return <div className="star"><div className="star-custom">{arr}</div></div> ;
-}
+  }
+  return (
+    <div className="star">
+      <div className="star-custom">{arr}</div>
+    </div>
+  );
+};
 export default Star;

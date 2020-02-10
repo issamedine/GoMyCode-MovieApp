@@ -1,11 +1,15 @@
-import React from 'react'
-import ModalMovie from './ModalMovie'
+import React from "react";
+import ModalMovie from "./ModalMovie";
 
-function AddMovie(props) {
-    return (
-        <div>
-            <ModalMovie handleAdd={props.handleAdd} />
-        </div>
-    )
+function AddMovie({handelChangeRate, handleAdd}) {
+  return (
+    <div>
+      <ModalMovie
+        handleAdd={handleAdd}
+        handelChangeRate={handelChangeRate}
+
+      />
+    </div>
+  );
 }
-export default AddMovie
+export default AddMovie;
