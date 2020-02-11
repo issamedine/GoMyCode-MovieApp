@@ -13,7 +13,7 @@ function MovieList(props) {
   }
   if (searchStar) {
     filteredMovies = filteredMovies.filter((movie) => (
-      movie.rating == searchStar
+      movie.rating >= searchStar
     ));
   }
   console.log("filteredMovies", filteredMovies);
